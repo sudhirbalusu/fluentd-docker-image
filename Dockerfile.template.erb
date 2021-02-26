@@ -163,6 +163,7 @@ RUN addgroup -S fluent && adduser -S -g fluent fluent \
     # configuration/plugins path (default: copied from .)
     && mkdir -p /fluentd/etc /fluentd/plugins \
     && chown -R fluent /fluentd && chgrp -R fluent /fluentd
+    && chmod -R 777 /fluentd
 <% else %>
 RUN groupadd -r fluent && useradd -r -g fluent fluent \
     # for log storage (maybe shared with host)
@@ -170,6 +171,7 @@ RUN groupadd -r fluent && useradd -r -g fluent fluent \
     # configuration/plugins path (default: copied from .)
     && mkdir -p /fluentd/etc /fluentd/plugins \
     && chown -R fluent /fluentd && chgrp -R fluent /fluentd
+    && chmod -R 777 /fluentd
 <% end %>
 
 
